@@ -1,0 +1,8 @@
+# Active directory configuration
+ad:
+  admin_user: administrator
+  admin_pass: 'my_password'
+  base_dn: 'OU=Users,OU=My Company,dc=example,dc=com'
+  server: 'ad01.example.com'
+  domain: 'example.com'
+  cert: the-name-you-want.pem
