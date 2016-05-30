@@ -11,7 +11,7 @@
 4. Open the certificate and export it as the-name-you-want.pem
 
 ## Configuration file ad-add-user.yaml 
-
+'''
 ad:
   admin_user: administrator
   admin_pass: my_password
@@ -19,4 +19,4 @@ ad:
   server: 'ad01.example.com'
   domain: 'example.com'
   cert: the-name-you-want.pem
-
+'''
