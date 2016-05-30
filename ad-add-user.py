@@ -39,10 +39,6 @@ class AD:
         parser.add_argument('-l', '--lastname', dest='lastname', help='Last Name', required=True, type=str)
         parser.add_argument('-d', '--domain', dest='domain', help='Domain Name', required=True, type=str)
 
-        #parser.add_argument('--seconds', dest='seconds', help='Cantidad de segundos permitidos para la creacion del ultimo archivo', required=False, type=int, default=300)
-        #parser.add_argument('-d', dest='debug', help='Habilita el modo debug', action='store_true', required=False)
-        #parser.add_argument('--snmp', dest='snmp', help='Retorna un valor para ser leido por snmp. No envia alertas por mail', action='store_true', required=False)
-
         args = parser.parse_args()
 
         self.me             = os.path.dirname(os.path.realpath(__file__)) # directory where I'm running
@@ -141,14 +137,6 @@ class AD:
           print "Error setting password: %s" % error_message
           return False
 
-        # # Change the account back to enabled
-        # try:
-        #   ldap_client.modify_s(user_dn, mod_acct)
-        # except ldap.LDAPError, error_message:
-        #   print "Error enabling user: %s" % error_message
-        #   return False
-
-
     def main(self):
         self.getparams()                        # get command line params
         self.ldap_connect()                     # connect to ldap server
@@ -157,8 +145,6 @@ class AD:
         else:
             print "user account %s doesn't exists" %self.user
             self.ldap_add_user()
-
-
 
 
 if __name__ == "__main__":
